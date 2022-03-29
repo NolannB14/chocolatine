@@ -1,0 +1,35 @@
+name: Mirror Chocolatine
+on:
+  push:
+    branches:
+      - '!ga-ignore-'
+  pull_request:
+    branches:
+      - '!ga-ignore-'
+
+env:
+  MIRROR_URL: "git@github.com:EpitechPromo2026/B-DOP-200-BDX-2-1-bschocolatine-nolann.bougrainville.git"
+  EXECUTABLES: "pushswap","lib/my/libmy.a","antman/antman","giantman/giantman"
+
+jobs:
+  check_repository_cleanliness:
+    runs-on: ubuntu-latest
+    container:
+      image: epitechcontent/epitest-docker:latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Scan Repository
+      run: exit 1
+  # fetch_repo:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #     with:
+  #       fetch-depth: 0
+  #   - uses: pixta-dev/repository-mirroring-action@v1
+  #     with:
+  #       target_repo_url:
+  #       ssh_private_key:
+  #         ${{ secrets.SSH_PRIVATE_KEY }}
