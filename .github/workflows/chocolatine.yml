@@ -7,9 +7,9 @@ on:
     branches:
       - '!ga-ignore-'
 
-env:
-  MIRROR_URL: "git@github.com:EpitechPromo2026/B-DOP-200-BDX-2-1-bschocolatine-nolann.bougrainville.git"
-  EXECUTABLES: "pushswap","lib/my/libmy.a","antman/antman","giantman/giantman"
+# env:
+#   MIRROR_URL: "git@github.com:EpitechPromo2026/B-DOP-200-BDX-2-1-bschocolatine-nolann.bougrainville.git"
+#   EXECUTABLES: "pushswap","lib/my/libmy.a","antman/antman","giantman/giantman"
 
 jobs:
   check_repository_cleanliness:
