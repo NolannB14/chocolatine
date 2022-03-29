@@ -1,11 +1,11 @@
 name: Mirror Chocolatine
 on:
   push:
-    branches:
-      - '!ga-ignore-'
+    branches-ignore:
+      - ga-ignore-
   pull_request:
-    branches:
-      - '!ga-ignore-'
+    branches-ignore:
+      - ga-ignore-
 
 jobs:
   check_repository_cleanliness:
