@@ -21,7 +21,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Scan .a files
-      run: echo ${#$(find . -name '*.a')}
+      run: echo $(find . -name '*.a')
       # run: |
       #   if [[ $(echo ${#$(find . -name '*.a')}) ]]; then
       #     echo "::notice line={1},endLine={1},title={En effet}::{je suis trop chaud}"
