@@ -23,7 +23,7 @@ jobs:
     - name: Scan .a files
       run: |
         if [[ $(find . -name '*.a') ]]; then
-          echo "::failure line={1},endLine={1},title={En effet}::{je suis trop chaud}"
+          echo "::error line={1},endLine={1},title={En effet}::{je suis trop chaud}"
           exit 1
         fi
       # echo: "Mama ça va être compliqué"
