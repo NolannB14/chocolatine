@@ -22,6 +22,7 @@ jobs:
         fetch-depth: 0
     - name: Scan .a files
       run: ::set-output name=dota::echo ${#$(find . -name '*.a')}
+    - name: Check errors
       if: ${{ steps.dota.outputs.dota }}
       run: ::notice file={name},line={line},endLine={endLine},title={title}::{message}
       # echo: "Mama ça va être compliqué"
