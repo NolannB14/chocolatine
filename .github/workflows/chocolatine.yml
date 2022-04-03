@@ -13,13 +13,13 @@ env:
 
 jobs:
   check_repository_cleanliness:
+    name: "Check this"
     runs-on: ubuntu-latest
     container:
       image: epitechcontent/epitest-docker:latest
     steps:
     - uses: actions/checkout@v2
       with:
-        event_name: "Check this"
         fetch-depth: 0
     - name: Scan .a files
       run: |
