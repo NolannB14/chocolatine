@@ -7,6 +7,9 @@ on:
     branches-ignore:
       - ga-ignore-
 
+env:
+  TEST: test
+
 jobs:
   check_repository_cleanliness:
     runs-on: ubuntu-latest
@@ -17,4 +20,4 @@ jobs:
       with:
         fetch-depth: 0
     - name: Scan Repository
-      run: exit 1
+      run:  find . \( -name "#*" -o -name "*#" -o -name "*~" -o -name "*pain_au_chocolat*" -o -name "*.o" -o -name "*.a" -o -name "*.so" -o -name "*.gcno" -o -name "*.gcda" -o -name "*.gcov" -o -path '*/tmp/*' \)
