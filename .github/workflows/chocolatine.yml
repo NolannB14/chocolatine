@@ -13,7 +13,7 @@ env:
 
 jobs:
   check_repository_cleanliness:
-    name: "Check this"
+    name: "Check if the repository is clean and void of any unwanted files (temp, files, binary files, etc.)"
     runs-on: ubuntu-latest
     container:
       image: epitechcontent/epitest-docker:latest
@@ -23,8 +23,10 @@ jobs:
         fetch-depth: 0
     - name: Scan .a files
       run: |
-        if [[ $(find . -name '*.a') ]]; then
-          echo "::error line={1},endLine={1},title={En effet}::{je suis trop chaud}"
-          exit 1
-        fi
-      # echo: "Mama ça va être compliqué"
+        arr=($(find . -name '*.a'))
+        for i in ${arr[@]}; do echo "Unwanted : $i"; done
+# if [[ $(find . -name '*.a') ]]; then
+#   echo "::error line=1,endLine=1,title=En effet::je suis trop chaud"
+#   exit 1
+# fi
+# echo: "Mama ça va être compliqué"
