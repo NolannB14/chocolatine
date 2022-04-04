@@ -15,8 +15,8 @@ jobs:
   check_repository_cleanliness:
     name: "Check if the repository is clean and void of any unwanted files (temp, files, binary files, etc.)"
     runs-on: ubuntu-latest
-    container:
-      image: epitechcontent/epitest-docker:latest
+    # container:
+    #   image: epitechcontent/epitest-docker:latest
     steps:
     - uses: actions/checkout@v2
       with:
@@ -27,7 +27,7 @@ jobs:
         -o -name "*pain_au_chocolat*" -o -name "*.o" -o -name "*.a" \
         -o -name "*.so" -o -name "*.gcno" -o -name "*.gcda" -o -name "*.gcov" \
          -o -path '*/tmp/*' \)))
-        for i in ${arr[@]}; do echo "::error file=$i,line=1,endLine=1,title=Unwanted file detected: $i::$i"; done
+        for i in ${arr[@]}; do echo "::error file=$i,line=1,endLine=1,title=Unwanted file detected::$i"; done
         exit 1
 # if [[ $(find . -name '*.a') ]]; then
 #   echo "::error line=1,endLine=1,title=En effet::je suis trop chaud"
