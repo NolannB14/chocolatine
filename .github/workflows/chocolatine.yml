@@ -21,10 +21,10 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - name: Scan .a files
+    - name: Scan files
       run: |
         arr=($(find . -name '*.a'))
-        for i in ${arr[@]}; do echo "Unwanted : $i"; done
+        for i in ${arr[@]}; do echo "::error file=$i,line=1,endLine=1,title=Unwanted file detected: $i::$i"; done
 # if [[ $(find . -name '*.a') ]]; then
 #   echo "::error line=1,endLine=1,title=En effet::je suis trop chaud"
 #   exit 1
