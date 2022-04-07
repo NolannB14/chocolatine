@@ -25,7 +25,6 @@ tests_run:
 
 clean:
 	rm -f $(OBJ)
-	rm -f $(NAME)
 
 fclean: clean
 
