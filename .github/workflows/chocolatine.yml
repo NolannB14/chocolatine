@@ -48,8 +48,8 @@ jobs:
       run: |
         IFS=',' read -ra ADDR <<< $EXECUTABLES
         for i in "${ADDR[@]}"; do
-          echo "files : $i"
-          if [[ ! -x $i ]]; then
+          echo "files : ./$i"
+          if [[ ! -x "./$i" ]]; then
             echo 'check'
             exit 1
           fi
