@@ -46,7 +46,7 @@ jobs:
       run: make clean
     - name: Check executable files exists
       run: |
-        IFS=',' read -ra ADDR <<< env.EXECUTABLES
+        IFS=',' read -ra ADDR <<< $EXECUTABLES
         for i in "${ADDR[@]}"; do
           echo "files : $i"
           if [[ ! -x $i ]]; then
