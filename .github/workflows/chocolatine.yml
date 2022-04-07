@@ -8,7 +8,7 @@ on:
       - ga-ignore-
 
 env:
-  MIRROR_URL: "https://github.com/EpitechPromo2026/B-DOP-200-BDX-2-1-chocolatine-nolann.bougrainville"
+  MIRROR_URL: "git@github.com:EpitechPromo2026/B-DOP-200-BDX-2-1-chocolatine-nolann.bougrainville.git"
   EXECUTABLES: "pushswap"
 
 jobs:
@@ -48,7 +48,7 @@ jobs:
       run: |
         IFS=',' read -ra ADDR <<< $EXECUTABLES
         for i in "${ADDR[@]}"; do
-          if [[ ! -f "./${i}" ]]; then
+          if [[ ! -x "./${i}" ]]; then
             exit 1
           fi
         done
