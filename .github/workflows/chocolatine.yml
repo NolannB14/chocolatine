@@ -48,7 +48,9 @@ jobs:
       run: |
         IFS=',' read -ra ADDR <<< env.EXECUTABLES
         for i in "${ADDR[@]}"; do
+          echo "files : $i"
           if [[ ! -x $i ]]; then
+            echo 'check'
             exit 1
           fi
         done
