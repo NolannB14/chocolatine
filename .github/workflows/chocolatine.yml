@@ -48,7 +48,7 @@ jobs:
       run: |
         IFS=',' read -ra ADDR <<< "$EXECUTABLES"
         for i in "${ADDR[@]}"; do
-          if [[ ! -x $i ]] then
+          if [[ ! -x $i ]]; then
             exit 1
         done
 
