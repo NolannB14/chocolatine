@@ -26,7 +26,7 @@ jobs:
         -o -name "*.so" -o -name "*.gcno" -o -name "*.gcda" -o -name "*.gcov" \
          -o -path '*/tmp/*' \)))
         for i in ${arr[@]}; do echo "::error file=$i,line=1,endLine=1,title=Unwanted file detected::$i"; done
-        if (( ! ${arr[@]} )); then
+        if (( ${arr[@]} )); then
           exit 1
         fi
 
