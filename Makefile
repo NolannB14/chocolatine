@@ -26,11 +26,15 @@ build:
 # 	rm -f $(TEST_NAME)
 
 clean:
+	make clean -C lib/my
+	make clean -C antman
+	make clean -C giantman
+
+fclean:	clean
 	make fclean -C lib/my
 	make fclean -C antman
 	make fclean -C giantman
 
-fclean:	clean
 
 re:	all
 
