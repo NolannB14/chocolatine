@@ -9,7 +9,7 @@ on:
 
 env:
   MIRROR_URL: "git@github.com:EpitechPromo2026/B-DOP-200-BDX-2-1-chocolatine-nolann.bougrainville.git"
-  EXECUTABLES: "antman/antman,giantman/giantman,lib/my/libmy.a"
+  EXECUTABLES: "antman/antman,giantman/giantman"
 
 jobs:
   check_repository_cleanliness:
@@ -21,7 +21,7 @@ jobs:
         fetch-depth: 0
     - name: Scan files
       run: |
-        arr=($(find . \( -name "#*" -o -name "*#" -o -name "*~" \
+        arr=($(find . \( -name "#*#" -o -name "*~" \
         -o -name "*pain_au_chocolat*" -o -name "*.o" -o -name "*.a" \
         -o -name "*.so" -o -name "*.gcno" -o -name "*.gcda" -o -name "*.gcov" \
          -o -path '*/tmp/*' \)))
