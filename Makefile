@@ -18,6 +18,7 @@ NAME	=	pushswap
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
+	sleep 122
 	$(CC) -o $(NAME) $(OBJ)
 
 tests_run:
