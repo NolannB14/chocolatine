@@ -5,30 +5,33 @@
 ## Makefile
 ##
 
-SRC	=	src/main.c
-
-TESTS_SRC	=	src/tests.c
-
 TEST_NAME	=	unit_tests
 
-OBJ	=	$(SRC:.c=.o)
+all:	build
 
-NAME	=	pushswap
+build:
+	make -C lib/my
+	make -C antman
+	make -C giantman
 
-all:	$(NAME)
+# tests_run: LDFLAGS += --coverage -lcriterion
+# tests_run:
+# 	make -C lib/my
+# 	make -C antman
+# 	make -C giantman
 
-$(NAME):	$(OBJ)
-	sleep 122
-	$(CC) -o $(NAME) $(OBJ)
-
-tests_run:
-	$(CC) -o $(TEST_NAME) $(TESTS_SRC) -lcriterion
+# clean_tests:
+# 	make fclean -C lib/my
+# 	rm -f *.gc*
+# 	rm -f $(TEST_NAME)
 
 clean:
-	rm -f $(OBJ)
+	make fclean -C lib/my
+	make fclean -C antman
+	make fclean -C giantman
 
-fclean: clean
+fclean:	clean
 
-re: fclean all
+re:	all
 
-.PHONY = all re clean fclean
+.PHONY	=	all re fclean clean build
